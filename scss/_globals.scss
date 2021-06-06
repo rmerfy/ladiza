@@ -1,0 +1,266 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+button,
+span,
+a,
+label {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    background: $gr-blue;
+}
+
+body.lock {
+    overflow: hidden;
+}
+
+input,
+button {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+p,
+span {
+    line-height: 1.4;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.15s ease-in-out;
+}
+
+input {
+    border-radius: 8px;
+    padding: 15px 10px;
+    border: 2px solid $gold;
+    color: $blue;
+}
+
+input[type='range'] {
+    border-radius: 50px;
+    border: none;
+    padding: 0;
+    overflow: hidden;
+    width: 240px;
+    -webkit-appearance: none;
+    background-color: $grey;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    color: #13bba4;
+    margin-top: -1px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    cursor: ew-resize;
+    background: linear-gradient(230.12deg, #C89A4B 0%, #F7E6AE 47.65%, #C89A4B 94.31%);
+    box-shadow: -200px 0 0 190px $gold;
+}
+
+input[type="range"]::-moz-range-progress {
+    background-color: $gold; 
+}
+input[type="range"]::-moz-range-track {  
+    background-color: $gold;
+}
+input[type="range"]::-ms-fill-lower {
+    background-color: #c4c4c4; 
+}
+input[type="range"]::-ms-fill-upper {  
+    background-color: #c4c4c4;
+}
+
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1290px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.btn {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-block;
+    background: linear-gradient(230.12deg, #c89a4b 0%, #f7e6ae 47.65%, #c89a4b 94.31%);
+    border-radius: 8px;
+    color: $blue;
+    padding: 20px;
+    border: none;
+    border-bottom: 4px solid #f7e6ae;
+    text-align: center;
+    transition: all 0.15s ease-in-out;
+    outline: none;
+    &:hover {
+        box-shadow: 0 0 10px $gold;
+    }
+    &:focus {
+        box-shadow: 0 0 10px $gold;
+        transform: scale(0.98);
+    }
+}
+
+.title {
+    font-family: "Cormorant Garamond";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $gold;
+}
+
+.sep-line-lg {
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 15px;
+        background-image: url(../images/icons/separator-lg.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: 30px;
+    }
+}
+
+.sep-line-sm {
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 15px;
+        background-image: url(../images/icons/separator-sm.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: 30px;
+    }
+}
+
+.menu__close,
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+}
+
+.tingle-modal {
+    background: rgba(0,0,0,0.1);
+}
+.tingle-modal:before {
+    backdrop-filter: blur(2px);
+}
+
+.callback-modals .tingle-modal-box {
+    background: $gr-blue;
+    max-width: 340px;
+}
+
+.proj-modal .tingle-modal-box {
+    background: $gr-blue;
+    display: flex;
+    flex-direction: column;
+    img {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+h2.modal-form__form-title {
+    font-family: 'Montserrat';
+    font-size: 20px;
+}
+
+.modal-callback {
+    display: none;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.modal-form__form-title {
+    font-size: 24px;
+    margin: 0 0 30px;
+}
+
+.tingle-modal-box__content {
+    padding: 30px;
+}
+
+.modal-form__form-input {
+    margin-bottom: 15px;
+}
+
+.step__select-title {
+    display: block;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+}
+
+.blesk {
+    overflow: hidden;
+    position: relative;
+    &:before {
+        content: "";
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5));
+        height: 100%;
+        width: 100px;
+        position: absolute;
+        top: 0;
+        transform: skewX(-45deg);
+        opacity: .8;
+        animation: 3s blesk infinite;
+        filter: blur(14px);
+    }
+}
+
+
+.twentytwenty-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    img {
+        width: 100%;
+        height: 560px;
+        object-fit: cover;
+    }
+}
+
+.footer {
+    margin-top: auto;
+}
